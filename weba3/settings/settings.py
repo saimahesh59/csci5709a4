@@ -87,18 +87,7 @@ DATABASES = {
     }
 }
 '''
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'CSCI5308_7_TEST',
-        'USER': 'CSCI5308_7_TEST_USER',
-        'PASSWORD': 'CSCI5308_7_TEST_7612',
-        'HOST': 'db.cs.dal.ca',
-        'PORT': '3306',
-    }
-}
-'''
+
 # aws posgres
 DATABASES = {
     'default': {
@@ -115,19 +104,6 @@ DATABASES = {
 #
 
 
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'web_a3',
-        'USER': 'root',
-        'PASSWORD': 'thekingisdead',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
-
-'''
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -169,4 +145,4 @@ AUTH_USER_MODEL = 'accounts.User'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
