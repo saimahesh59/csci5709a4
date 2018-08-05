@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 import os
+#import pymysql
 
+#pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -25,7 +27,7 @@ SECRET_KEY = 'n+3w3gflpw+o!96+6sk3k=r_tcu+zo24%(o_$&3i5xhl+qx$3m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['csci5709a4.herokuapp.com']
+ALLOWED_HOSTS = ['csci5709a4.herokuapp.com', '127.0.0.1',]
 
 
 # Application definition
@@ -80,14 +82,55 @@ WSGI_APPLICATION = 'weba3.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+'''
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'CSCI5308_7_TEST',
+        'USER': 'CSCI5308_7_TEST_USER',
+        'PASSWORD': 'CSCI5308_7_TEST_7612',
+        'HOST': 'db.cs.dal.ca',
+        'PORT': '3306',
+    }
+}
+'''
+# aws posgres
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'zimola',
+        'USER': 'zimola',
+        'PASSWORD': 'B00475892',
+        'HOST': 'zimola.ctfhl74ckxth.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
+
+#
+
+
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'web_a3',
+        'USER': 'root',
+        'PASSWORD': 'thekingisdead',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+'''
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
