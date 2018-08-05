@@ -1,0 +1,86 @@
+/*-----------------------------*/
+/* BASIC SET UP*/
+/*-----------------------------*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: white;
+    color:#555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+.clearfix{zoom: 1}
+.clearfix:after{
+    content: '.';
+    clear:both;
+    display:block;
+    height:0;
+    visibility :hidden;
+}
+
+
+/*-----------------------------*/
+/* Reuseable Components */
+/*-----------------------------*/
+.row{
+    max-width: 1140px;
+    margin: 0 auto 0 auto;
+}
+section{
+    padding: 80px 0;
+}
+
+/*-----------------------------*/
+/* Headings */
+/*-----------------------------*/
+
+h1, h2, h3{
+
+    font-weight: 300;
+}
+
+h1{
+    margin:0;
+    margin-bottom:20px;
+    color:#000;
+    font-size:240%;
+    word-spacing: 4px;
+    letter-spacing: 1px;
+}
+
+h2{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3{
+    font-size: 110%;
+    word-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+
+.company-review{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+li{
+    list-style-type: none;
+}
+
+img{
+    height: 300px;
+    width: auto;
+}

@@ -1,0 +1,55 @@
+{% extends './company_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class = "row">
+<h1>{{ company.company_name }}</h1>
+</div>
+<div class = "row">
+  <div class = col-md-4>
+    <img src="{% static 'resources/img/company.jpg' %}/">
+  </div>
+  <div  class = col-md-8>
+  <h1> {{ company.company_name }} Overview</h1>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Dolorum inventore ipsa nesciunt nostrum quaerat repudiandae saepe sapiente
+  similique veniam vero. Autem commodi, natus perferendis quas quia recusandae ullam.
+  Enim, iste.</p><p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  Dolorum inventore ipsa nesciunt nostrum quaerat repudiandae saepe sapiente
+  similique veniam vero. Autem commodi, natus perferendis quas quia recusandae ullam.
+  Enim, iste.</p>
+  </div>
+</div>
+<br>
+<br>
+<div class = "row">
+  <div class="col-md-4">
+    <p><em>Reviews of {{ company.company_name }}</em></p>
+    {% for review in reviews %}
+      <ul>
+        <a href="#"><li><p>{{ review.employee_position }}</p></li></a>
+      </ul>
+    {% endfor %}
+  </div>
+
+   <div class = "col-md-4">
+     <div id="map" style="width:400px;height:400px">
+   </div>
+</div>
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(44.6488, -63.5752),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPbr9jy-o8nkU5KT7lsJv1WviRyXj_yQw&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+{% endblock %}

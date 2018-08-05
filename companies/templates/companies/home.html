@@ -1,0 +1,32 @@
+{% extends './company_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+      <li><a class="btn btn-primary btn-md" href="{% url 'companies:add_review' %}">Add Company Review</a></li>
+</div>
+</br>
+
+
+<div class="container">
+    <div class="row">
+        <h2>Recent Reviews</h2>
+{% for review in reviews %}
+  {% for company in companies %}
+    {% if review.company_id == company.id %}
+      <div class="company-review">
+        <ul>
+          <a href="{% url 'companies:company'  company.id %}"> <strong><li>Company: {{ company.company_name }}</li></strong></a>
+          <li>Review: {{ review.review }}</li>
+          <li>Rating: {{ review.rating }}</li>
+          <li>Employee Position: {{ review.employee_position }}</li>
+        </ul>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A2</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel='stylesheet' type="text/css" href="{% static 'resources/css/account_style.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <nav>
+    <div class="row">
+      <a href="../index.html" ><img src="{% static 'resources/img/dal-logo.png' %}" class="logo" alt="DalIntern-Logo"></a>
+    </div>
+  </nav>
+
+  <form class="auth-form" action="{% url 'accounts:login_user' %}" method="post">
+    {% csrf_token %}
+    <h2>Please sign in</h2>
+    {{ form.username }}
+    {{ form.password }}
+    <!--
+    <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address"  autofocus>
+    <input type="password" name="inputPassword" id="inputPassword" class="form-control" placeholder="Password" >
+    -->
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    <p>Not a member? <a href="register.html">Sign Up!</a></p>
+    <p class="mt-5 mb-3 text-muted">&copy; DalCompSci 2018</p>
+  </form>
+</header>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("form").validate({
+            rules: {
+                inputPassword: { required: true },
+                inputEmail: { required: true},
+            }
+        });
+    });
+</script>
+</body>
+</html>

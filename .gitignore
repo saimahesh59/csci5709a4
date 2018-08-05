@@ -1,0 +1,11 @@
+.idea/**/workspace.xml
+*/.idea/workspace.xml
+venv
+*.pyc
+staticfiles
+.env
+db.sqlite3
+.idea/workspace.xml
+raft.sublime
+.idea
+.DS_store
