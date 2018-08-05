@@ -145,4 +145,5 @@ AUTH_USER_MODEL = 'accounts.User'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 import dj_database_url
-#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True,
+                                              default='postgres://zimola:B00475892@zimola.ctfhl74ckxth.us-east-1.rds.amazonaws.com/zimola')
