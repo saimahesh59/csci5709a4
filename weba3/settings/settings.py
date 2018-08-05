@@ -87,7 +87,7 @@ DATABASES = {
     }
 }
 '''
-
+'''
 # aws posgres
 DATABASES = {
     'default': {
@@ -96,6 +96,22 @@ DATABASES = {
         'USER': 'zimola',
         'PASSWORD': 'B00475892',
         'HOST': 'zimola.ctfhl74ckxth.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
+
+'''
+
+
+
+# heroku posgres
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd7nm9nkc5v74q4',
+        'USER': 'qhqpfhflshlbcx',
+        'PASSWORD': '007375ca978b3a3411d0f05f22a0170bb5e355181648058eab4a077620903eea',
+        'HOST': 'ec2-54-221-210-97.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -145,7 +161,7 @@ AUTH_USER_MODEL = 'accounts.User'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #import dj_database_url
-#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True,
-#                                              default='postgres://zimola:B00475892@zimola.ctfhl74ckxth.us-east-1.rds.amazonaws.com/zimola')
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True,)
+#                                              # default='postgres://zimola:B00475892@zimola.ctfhl74ckxth.us-east-1.rds.amazonaws.com/zimola')
 import django_heroku
 django_heroku.settings(locals())
