@@ -10,3 +10,4 @@ urlpatterns = [
     path('explore/', include('explore.urls'))
 
 ]
+

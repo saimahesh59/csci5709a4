@@ -24,7 +24,7 @@ SECRET_KEY = 'n+3w3gflpw+o!96+6sk3k=r_tcu+zo24%(o_$&3i5xhl+qx$3m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['csci5709a4.herokuapp.com', '127.0.0.1',]
+ALLOWED_HOSTS = ['csci5709a4.herokuapp.com', '127.0.0.1','0.0.0.0',]
 
 
 # Application definition
@@ -161,16 +161,22 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+AUTH_USER_MODEL = 'accounts.User'
+
+MEDIA_URL = "/media/"
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-AUTH_USER_MODEL = 'accounts.User'
 
 
 #import dj_database_url
 #DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True,)
 #                                              # default='postgres://zimola:B00475892@zimola.ctfhl74ckxth.us-east-1.rds.amazonaws.com/zimola')
-import django_heroku
-django_heroku.settings(locals())
+#import django_heroku
+#django_heroku.settings(locals())
