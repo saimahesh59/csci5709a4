@@ -37,6 +37,7 @@ def register_user(request):
     return render(request, 'accounts/register.html', context=context)
 
 
+
 def logout_user(request):
     if request.method == "GET":
         logout(request)
